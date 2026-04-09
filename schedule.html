@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e1e3e4",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary-fixed": "#181c20",
+                        "on-primary-fixed": "#001a41",
+                        "on-background": "#191c1d",
+                        "outline-variant": "#c1c6d6",
+                        "secondary-container": "#dde0e6",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#9e4300",
+                        "on-tertiary-container": "#0e0200",
+                        "surface": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1a73e8",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "on-primary-fixed-variant": "#004493",
+                        "inverse-surface": "#2e3132",
+                        "on-surface-variant": "#414754",
+                        "surface-tint": "#005bc0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#43474c",
+                        "secondary-fixed-dim": "#c3c7cc",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#5b5f64",
+                        "primary": "#005bbf",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#c55500",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#5f6368",
+                        "error": "#ba1a1a",
+                        "surface-container": "#edeeef",
+                        "outline": "#727785",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "background": "#f8f9fa",
+                        "inverse-primary": "#adc7ff",
+                        "on-primary-container": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface": "#191c1d",
+                        "primary-fixed-dim": "#adc7ff",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-fixed": "#dfe3e8",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface text-on-surface min-h-screen pb-24 pt-16 selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopAppBar -->
+    <header id="stealth-trigger"
+        class="fixed top-0 w-full z-50 bg-slate-50 dark:bg-black flex items-center justify-between px-4 h-16 w-full cursor-pointer select-none">
+        <div class="flex items-center gap-4">
+            <button
+                class="p-2 hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors scale-95 active:duration-100 rounded-lg">
+                <span class="material-symbols-outlined text-blue-700 dark:text-blue-500">menu</span>
+            </button>
+            <h1
+                class="text-lg font-bold tracking-tighter text-slate-900 dark:text-white font-['Inter'] tracking-tight font-semibold">
+                Scholar's Ledger</h1>
+        </div>
+        <button
+            class="p-2 hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors scale-95 active:duration-100 rounded-lg">
+            <span class="material-symbols-outlined text-blue-700 dark:text-blue-500">search</span>
+        </button>
+    </header>
+    <main class="max-w-5xl mx-auto px-4 md:px-6 pt-6">
+        <!-- Calendar Section -->
+        <section class="mb-10">
+            <div class="flex items-baseline justify-between mb-6">
+                <div>
+                    <span class="text-[10px] uppercase tracking-[1.5pt] font-medium text-slate-500 block mb-1">Academic
+                        Cycle</span>
+                    <h2 id="calendar-title" class="text-3xl font-extrabold tracking-tight text-slate-900">October 2024</h2>
+                </div>
+                <div class="flex gap-2">
+                    <button id="prev-month"
+                        class="p-2 bg-surface-container hover:bg-surface-container-high transition-colors rounded-lg">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button id="next-month"
+                        class="p-2 bg-surface-container hover:bg-surface-container-high transition-colors rounded-lg">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Calendar Grid -->
+            <div class="bg-surface-container-low rounded-xl p-4 md:p-6 shadow-sm">
+                <div class="grid grid-cols-7 gap-1 md:gap-4 text-center mb-4">
+                    <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Mon</div>
+                    <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Tue</div>
+                    <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Wed</div>
+                    <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Thu</div>
+                    <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Fri</div>
+                    <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Sat</div>
+                    <div class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Sun</div>
+                </div>
+                <div id="calendar-grid" class="grid grid-cols-7 gap-1 md:gap-4">
+                    <!-- Generated via JS -->
+                </div>
+            </div>
+        </section>
+        <!-- Daily Tasks Section -->
+        <section class="pb-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">Daily Tasks</h3>
+                    <p id="selected-date-display" class="text-sm text-slate-500 font-medium">October 10, 2024</p>
+                </div>
+                <div class="h-px flex-grow mx-6 bg-surface-container hidden md:block"></div>
+                <div class="flex items-center gap-3 w-full md:w-auto relative group">
+                    <input id="schedule-task-input" type="text" placeholder="Add custom task + Enter" 
+                        class="text-sm border-none bg-surface-container-high rounded-full px-4 py-2 w-full md:w-48 focus:md:w-72 focus:ring-0 focus:bg-surface-container-highest transition-all" />
+                </div>
+            </div>
+            <!-- Task List Container -->
+            <div id="tasks-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Javascript rendered tasks go here -->
+            </div>
+        </section>
+    </main>
+    <!-- BottomNavBar -->
+    <nav class="fixed bottom-0 w-full z-50 border-t border-slate-200 dark:border-zinc-800 flex justify-around items-center h-16 bg-slate-50 dark:bg-black">
+        <a class="flex flex-col items-center justify-center text-slate-500 dark:text-zinc-500 pt-2 hover:text-slate-900 dark:hover:text-white transition-all w-1/4"
+            href="library.html">
+            <span class="material-symbols-outlined" data-icon="book">book</span>
+            <span class="font-['Inter'] text-[10px] uppercase tracking-[1.5pt] font-medium mt-1">Library</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 font-bold border-t-2 border-blue-700 dark:border-blue-400 pt-2 transition-all w-1/4"
+            href="schedule.html">
+            <span class="material-symbols-outlined" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+            <span class="font-['Inter'] text-[10px] uppercase tracking-[1.5pt] font-medium mt-1">Schedule</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500 dark:text-zinc-500 pt-2 hover:text-slate-900 dark:hover:text-white transition-all w-1/4"
+            href="index.html">
+            <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+            <span class="font-['Inter'] text-[10px] uppercase tracking-[1.5pt] font-medium mt-1">Metrics</span>
+        </a>
+        <a id="settings-trigger" class="flex flex-col items-center justify-center text-slate-500 dark:text-zinc-500 pt-2 hover:text-slate-900 dark:hover:text-white transition-all w-1/4 cursor-pointer"
+            onclick="return false;">
+            <span class="material-symbols-outlined" data-icon="settings">settings</span>
+            <span class="font-['Inter'] text-[10px] uppercase tracking-[1.5pt] font-medium mt-1">Settings</span>
+        </a>
+    </nav>
+    <script>
+        // Stealth mechanism: Focus Mode
+        let pressTimer;
+        const trigger = document.getElementById('stealth-trigger');
+        const startTimer = () => { pressTimer = window.setTimeout(() => { window.location.href = 'focus.html'; }, 1500); };
+        const resetTimer = () => { clearTimeout(pressTimer); };
+        trigger.addEventListener('mousedown', startTimer);
+        trigger.addEventListener('mouseup', resetTimer);
+        trigger.addEventListener('mouseleave', resetTimer);
+        trigger.addEventListener('touchstart', startTimer);
+        trigger.addEventListener('touchend', resetTimer);
+
+        // Sanctuary Trigger
+        let settingsTimer;
+        const setTrigger = document.getElementById('settings-trigger');
+        const startSettingsTimer = () => { settingsTimer = window.setTimeout(() => { window.location.href = 'sanctuary.html'; }, 1000); };
+        const resetSettingsTimer = () => { clearTimeout(settingsTimer); };
+        setTrigger.addEventListener('mousedown', startSettingsTimer);
+        setTrigger.addEventListener('mouseup', resetSettingsTimer);
+        setTrigger.addEventListener('mouseleave', resetSettingsTimer);
+        setTrigger.addEventListener('touchstart', startSettingsTimer);
+        setTrigger.addEventListener('touchend', resetSettingsTimer);
+        setTrigger.addEventListener('touchend', resetSettingsTimer);
+        setTrigger.addEventListener('click', () => { alert('Settings panel is temporarily locked by administrator.'); });
+
+        // Calendar Logic
+        const calendarTitle = document.getElementById('calendar-title');
+        const calendarGrid = document.getElementById('calendar-grid');
+        const prevBtn = document.getElementById('prev-month');
+        const nextBtn = document.getElementById('next-month');
+        const selectedDateDisplay = document.getElementById('selected-date-display');
+        const tasksContainer = document.getElementById('tasks-container');
+        const taskInput = document.getElementById('schedule-task-input');
+
+        let currentDate = new Date();
+        let selectedDate = new Date();
+
+        const tasksDB = {};
+
+        function renderCalendar() {
+            calendarGrid.innerHTML = '';
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+
+            calendarTitle.innerText = firstDay.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+            let startDay = firstDay.getDay() === 0 ? 7 : firstDay.getDay();
+
+            for(let i = 1; i < startDay; i++) {
+                calendarGrid.innerHTML += `<div class="aspect-square flex items-center justify-center text-slate-300 pointer-events-none"></div>`;
+            }
+
+            for(let i = 1; i <= lastDay.getDate(); i++) {
+                const iterDate = new Date(year, month, i);
+                const isSelected = iterDate.toDateString() === selectedDate.toDateString();
+                const isToday = iterDate.toDateString() === new Date().toDateString();
+                
+                let classes = "aspect-square flex flex-col items-center justify-center font-medium rounded-lg cursor-pointer transition-colors relative ";
+                
+                if (isSelected) {
+                    classes += "bg-primary text-on-primary shadow-lg font-bold scale-105 ";
+                } else if (isToday) {
+                    classes += "bg-surface-container-high text-primary font-bold hover:bg-surface-container ";
+                } else {
+                    classes += "hover:bg-surface-container text-slate-700 ";
+                }
+
+                const dateKey = `${year}-${month}-${i}`;
+                const hasTasks = tasksDB[dateKey] && tasksDB[dateKey].length > 0;
+
+                calendarGrid.innerHTML += `
+                    <div class="${classes}" onclick="selectDate(${year}, ${month}, ${i})">
+                        ${i}
+                        ${hasTasks && !isSelected ? `<span class="absolute bottom-1 w-1 h-1 bg-primary rounded-full"></span>` : ''}
+                        ${hasTasks && isSelected ? `<span class="absolute bottom-1 w-1 h-1 bg-white rounded-full"></span>` : ''}
+                    </div>
+                `;
+            }
+        }
+
+        window.selectDate = function(y, m, d) {
+            selectedDate = new Date(y, m, d);
+            renderCalendar();
+            renderTasks();
+        }
+
+        function renderTasks() {
+            selectedDateDisplay.innerText = selectedDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            
+            const dateKey = `${selectedDate.getFullYear()}-${selectedDate.getMonth()}-${selectedDate.getDate()}`;
+            const tasksOfDay = tasksDB[dateKey] || [];
+            
+            tasksContainer.innerHTML = '';
+            if(tasksOfDay.length === 0) {
+                 tasksContainer.innerHTML = `<div class="md:col-span-2 p-8 text-center text-slate-400 italic bg-surface-container-low rounded-xl">No tasks scheduled for this assigned cycle. Input tasks above.</div>`;
+                 return;
+            }
+
+            tasksOfDay.forEach((task, idx) => {
+                tasksContainer.innerHTML += `
+                <div class="flex flex-col md:flex-row gap-4 p-5 bg-white rounded-xl shadow-sm border border-transparent hover:border-outline-variant transition-all cursor-pointer group" onclick="toggleScheduleTask('${dateKey}', ${idx})">
+                    <div class="flex flex-col justify-center border-l-4 ${task.completed ? 'border-emerald-500' : 'border-primary'} pl-4 transition-colors">
+                        <span class="text-[11px] font-bold ${task.completed ? 'text-emerald-500' : 'text-primary'} uppercase tracking-tighter mb-1 transition-colors">Custom Block</span>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="text-lg font-bold text-slate-900 ${task.completed ? 'line-through opacity-50' : 'group-hover:text-primary transition-colors'}">${task.text}</h4>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full ${task.completed ? 'bg-emerald-50 text-emerald-700' : 'bg-surface-container-high text-slate-600'} text-[11px] font-bold uppercase tracking-wide transition-colors">
+                            <span class="material-symbols-outlined text-[14px]">${task.completed ? 'check_circle' : 'pending'}</span> ${task.completed ? 'Completed' : 'Pending'}
+                        </span>
+                    </div>
+                </div>
+                `;
+            });
+        }
+
+        window.toggleScheduleTask = function(dateKey, idx) {
+             tasksDB[dateKey][idx].completed = !tasksDB[dateKey][idx].completed;
+             renderTasks();
+        }
+
+        taskInput.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter' && taskInput.value.trim() !== '') {
+                const dateKey = `${selectedDate.getFullYear()}-${selectedDate.getMonth()}-${selectedDate.getDate()}`;
+                if(!tasksDB[dateKey]) tasksDB[dateKey] = [];
+                tasksDB[dateKey].push({ text: taskInput.value.trim(), completed: false });
+                taskInput.value = '';
+                renderTasks();
+                renderCalendar();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        // Initialize state for 'Today'
+        const tDate = new Date();
+        tasksDB[`${tDate.getFullYear()}-${tDate.getMonth()}-${tDate.getDate()}`] = [
+            { text: "Review Mathematical Models", completed: false },
+            { text: "Complete Chemistry Report", completed: true }
+        ];
+
+        renderCalendar();
+        renderTasks();
+    </script>
+</body>
+
+</html>

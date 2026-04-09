@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Academic Analysis - Research Metrics</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1d",
+                        "secondary": "#5b5f64",
+                        "on-tertiary-container": "#0e0200",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "primary": "#005bbf",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#5f6368",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-tint": "#005bc0",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#9e4300",
+                        "surface-container-highest": "#e1e3e4",
+                        "outline": "#727785",
+                        "on-tertiary-fixed": "#341100",
+                        "on-secondary-fixed": "#181c20",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary-fixed": "#dfe3e8",
+                        "primary-container": "#1a73e8",
+                        "surface-dim": "#d9dadb",
+                        "tertiary-container": "#c55500",
+                        "surface-container-high": "#e7e8e9",
+                        "on-surface-variant": "#414754",
+                        "on-primary-container": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c3c7cc",
+                        "inverse-primary": "#adc7ff",
+                        "outline-variant": "#c1c6d6",
+                        "tertiary-fixed": "#ffdbcb",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#dde0e6",
+                        "on-primary-fixed": "#001a41",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-secondary-fixed-variant": "#43474c",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+    <!-- TopAppBar -->
+    <header class="bg-slate-50 dark:bg-black flex justify-between items-center w-full px-6 py-4 sticky top-0 z-40">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-blue-700 dark:text-blue-500"
+                data-icon="analytics">analytics</span>
+            <span class="text-lg font-black text-slate-900 dark:text-white tracking-tighter">Academic Analysis</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="font-['Inter'] tracking-tight font-semibold text-sm uppercase text-slate-500">Metric
+                Dashboard</span>
+            <span
+                class="material-symbols-outlined text-blue-700 dark:text-blue-500 transition-all duration-200 ease-in-out active:scale-95"
+                data-icon="emergency_home">emergency_home</span>
+        </div>
+    </header>
+    <div class="bg-slate-200 dark:bg-zinc-900 h-[1px] w-full"></div>
+    <main class="max-w-6xl mx-auto px-6 pt-8 pb-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <!-- Left Column: Focus Controls & Metrics -->
+            <div class="md:col-span-4 space-y-8">
+                <!-- Utilitarian Timer Card -->
+                <section class="bg-surface-container-lowest p-8 shadow-sm border-b-2 border-primary/10">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xs font-bold tracking-[0.15em] uppercase text-secondary">Focus Session</h2>
+                        <span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 text-[10px] font-bold">MODE:
+                            DEEP STUDY</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-7xl font-black tracking-tighter text-on-surface mb-4 tabular-nums">25:00</div>
+                        <div class="grid grid-cols-2 gap-2 mt-8">
+                            <button
+                                class="bg-primary text-on-primary py-3 font-bold text-sm tracking-wide transition-all active:scale-95">START
+                                SESSION</button>
+                            <button
+                                class="bg-surface-container text-on-surface-variant py-3 font-bold text-sm tracking-wide transition-all active:scale-95">RESET</button>
+                        </div>
+                        <div class="mt-4">
+                            <button
+                                class="w-full bg-surface-container-low text-secondary font-medium text-[11px] py-2 uppercase tracking-widest hover:bg-surface-container-high transition-colors">Long
+                                Break (15m)</button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Data Decoy: Urgent Metrics -->
+                <section class="bg-surface-container p-6 space-y-4">
+                    <h3 class="text-xs font-bold text-secondary uppercase tracking-widest">Aggregate Metrics</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+                            <span class="text-sm font-medium">Efficiency Coefficient</span>
+                            <span class="text-lg font-bold text-tertiary">0.84</span>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+                            <span class="text-sm font-medium">Weekly Total Hours</span>
+                            <span class="text-lg font-bold text-primary">34.2</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Right Column: Task Management & Visualization -->
+            <div class="md:col-span-8 space-y-8">
+                <!-- Task Management -->
+                <section class="bg-surface-container-lowest p-8 shadow-sm">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2 class="text-lg font-black tracking-tight uppercase">Daily Study Tasks</h2>
+                        <span class="text-[10px] text-secondary font-mono">ID: TASK_MANIFEST_292</span>
+                    </div>
+                    <div class="space-y-1 mb-8">
+                        <div class="flex items-center gap-4 p-3 hover:bg-surface-container-low transition-colors group">
+                            <div class="w-5 h-5 border-2 border-outline rounded-sm flex items-center justify-center">
+                                <span class="material-symbols-outlined text-sm hidden group-hover:block"
+                                    data-icon="check">check</span>
+                            </div>
+                            <span class="text-sm font-medium text-on-surface-variant">Review Section 4.2: Organic
+                                Synthesis Paradigms</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-3 bg-surface-container-low border-l-4 border-primary">
+                            <div
+                                class="w-5 h-5 border-2 border-primary bg-primary rounded-sm flex items-center justify-center">
+                                <span class="material-symbols-outlined text-sm text-on-primary"
+                                    data-icon="check">check</span>
+                            </div>
+                            <span class="text-sm font-bold text-on-surface line-through opacity-50">Quantitative Methods
+                                Problem Set</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-3 hover:bg-surface-container-low transition-colors group">
+                            <div class="w-5 h-5 border-2 border-outline rounded-sm"></div>
+                            <span class="text-sm font-medium text-on-surface-variant">Draft Abstract for Mid-Term
+                                Submission</span>
+                        </div>
+                    </div>
+                    <!-- Hidden Trigger Input -->
+                    <div class="relative group">
+                        <input
+                            class="w-full bg-surface-container-high border-none text-sm p-4 placeholder:text-secondary/50 focus:ring-0 focus:bg-surface-container-highest transition-all"
+                            placeholder="Add study task..." type="text" />
+                        <div class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2">
+                            <span class="text-[10px] font-bold text-secondary/30 uppercase tracking-tighter">Enter to
+                                Append</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- Visualization: Performance Graph -->
+                <section class="bg-surface-container-lowest p-8 shadow-sm">
+                    <div class="flex justify-between items-center mb-10">
+                        <div>
+                            <h2 class="text-lg font-black tracking-tight uppercase">Mock Test Performance</h2>
+                            <p class="text-[10px] font-medium text-secondary uppercase tracking-widest mt-1">Variance
+                                Analysis: T-Score Distribution</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-3 h-3 bg-primary"></span>
+                            <span class="text-[9px] font-bold uppercase">Target %</span>
+                        </div>
+                    </div>
+                    <div
+                        class="h-64 flex items-end justify-between gap-2 border-l border-b border-outline-variant/50 px-2 relative">
+                        <!-- Simulated Chart Grid -->
+                        <div class="absolute inset-0 grid grid-rows-4 pointer-events-none">
+                            <div class="border-t border-outline-variant/10"></div>
+                            <div class="border-t border-outline-variant/10"></div>
+                            <div class="border-t border-outline-variant/10"></div>
+                            <div class="border-t border-outline-variant/10"></div>
+                        </div>
+                        <!-- Chart Bars/Lines -->
+                        <div class="w-full h-full flex items-end justify-around pb-1 relative z-10">
+                            <div class="w-8 bg-surface-container-high h-[40%] hover:bg-primary/20 transition-colors">
+                            </div>
+                            <div class="w-8 bg-surface-container-high h-[55%] hover:bg-primary/20 transition-colors">
+                            </div>
+                            <div class="w-8 bg-primary h-[75%] relative">
+                                <div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold">82%</div>
+                            </div>
+                            <div class="w-8 bg-surface-container-high h-[60%] hover:bg-primary/20 transition-colors">
+                            </div>
+                            <div class="w-8 bg-surface-container-high h-[68%] hover:bg-primary/20 transition-colors">
+                            </div>
+                            <div class="w-8 bg-surface-container-high h-[45%] hover:bg-primary/20 transition-colors">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-around mt-4 text-[9px] font-bold text-secondary uppercase tracking-widest">
+                        <span>WK 01</span>
+                        <span>WK 02</span>
+                        <span>WK 03</span>
+                        <span>WK 04</span>
+                        <span>WK 05</span>
+                        <span>WK 06</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-slate-50 dark:bg-black/90 dark:backdrop-blur-xl">
+        <a class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 scale-105 transition-transform duration-300 ease-out"
+            href="#">
+            <span class="material-symbols-outlined mb-1" data-icon="timer"
+                style="font-variation-settings: 'FILL' 1;">timer</span>
+            <span class="font-['Inter'] text-[10px] font-medium tracking-[0.15em] uppercase">Metrics</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 dark:text-zinc-600 opacity-60 hover:opacity-100 transition-transform duration-300 ease-out"
+            href="#">
+            <span class="material-symbols-outlined mb-1" data-icon="event_note">event_note</span>
+            <span class="font-['Inter'] text-[10px] font-medium tracking-[0.15em] uppercase">Schedule</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 dark:text-zinc-600 opacity-60 hover:opacity-100 transition-transform duration-300 ease-out"
+            href="#">
+            <span class="material-symbols-outlined mb-1" data-icon="menu_book">menu_book</span>
+            <span class="font-['Inter'] text-[10px] font-medium tracking-[0.15em] uppercase">Library</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 dark:text-zinc-600 opacity-60 hover:opacity-100 transition-transform duration-300 ease-out"
+            href="#">
+            <span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+            <span class="font-['Inter'] text-[10px] font-medium tracking-[0.15em] uppercase">Settings</span>
+        </a>
+    </nav>
+    <!-- Navigation Shadow/Separation -->
+    <div class="fixed bottom-0 left-0 w-full h-[1px] bg-slate-100 dark:bg-zinc-800 z-[51] mb-[84px]"></div>
+</body>
+
+</html>

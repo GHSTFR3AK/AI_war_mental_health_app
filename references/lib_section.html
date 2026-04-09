@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e1e3e4",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary-fixed": "#181c20",
+                        "on-primary-fixed": "#001a41",
+                        "on-background": "#191c1d",
+                        "outline-variant": "#c1c6d6",
+                        "secondary-container": "#dde0e6",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#9e4300",
+                        "on-tertiary-container": "#0e0200",
+                        "surface": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1a73e8",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "on-primary-fixed-variant": "#004493",
+                        "inverse-surface": "#2e3132",
+                        "on-surface-variant": "#414754",
+                        "surface-tint": "#005bc0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#43474c",
+                        "secondary-fixed-dim": "#c3c7cc",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#5b5f64",
+                        "primary": "#005bbf",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#c55500",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#5f6368",
+                        "error": "#ba1a1a",
+                        "surface-container": "#edeeef",
+                        "outline": "#727785",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "background": "#f8f9fa",
+                        "inverse-primary": "#adc7ff",
+                        "on-primary-container": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface": "#191c1d",
+                        "primary-fixed-dim": "#adc7ff",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-fixed": "#dfe3e8",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 flex items-center justify-between px-4 h-16 w-full bg-slate-50 dark:bg-black">
+        <div class="flex items-center gap-4">
+            <button
+                class="p-2 text-blue-700 dark:text-blue-500 hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors scale-95 active:duration-100">
+                <span class="material-symbols-outlined" data-icon="menu">menu</span>
+            </button>
+            <h1
+                class="text-lg font-bold tracking-tighter text-slate-900 dark:text-white font-['Inter'] tracking-tight font-semibold">
+                Scholar's Ledger</h1>
+        </div>
+        <button
+            class="p-2 text-blue-700 dark:text-blue-500 hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors scale-95 active:duration-100">
+            <span class="material-symbols-outlined" data-icon="search">search</span>
+        </button>
+    </header>
+    <main class="pt-20 pb-24 px-4 md:px-8 max-w-5xl mx-auto">
+        <!-- Header Info -->
+        <div class="mb-8 ml-6">
+            <h2 class="text-[1.75rem] font-semibold leading-tight text-on-surface font-headline">Library</h2>
+            <p class="text-on-surface-variant text-sm mt-1">Institutional Repository / Fall 2024 Collections</p>
+        </div>
+        <!-- Academic Metrics (Decoy mode specialized component) -->
+        <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-surface-container-low p-4 rounded-lg flex flex-col items-start">
+                <span class="text-[0.6875rem] uppercase tracking-[1.5pt] font-medium text-tertiary">Total Storage</span>
+                <span class="text-xl font-bold text-on-surface">2.4 GB / 5.0 GB</span>
+            </div>
+            <div class="bg-surface-container-low p-4 rounded-lg flex flex-col items-start">
+                <span class="text-[0.6875rem] uppercase tracking-[1.5pt] font-medium text-tertiary">Recent Access</span>
+                <span class="text-xl font-bold text-on-surface">14 Documents</span>
+            </div>
+        </div>
+        <!-- Document List - Reference Material Section -->
+        <section class="mb-10">
+            <div class="flex items-center gap-2 mb-4">
+                <h3 class="text-sm font-bold text-on-surface-variant tracking-wider uppercase px-2">Reference Material
+                </h3>
+                <div class="h-[1px] flex-grow bg-outline-variant opacity-20"></div>
+            </div>
+            <div class="space-y-1">
+                <!-- List Item -->
+                <div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-outline" data-icon="description">description</span>
+                        <div>
+                            <p class="text-sm font-medium text-on-surface">Organic Synthesis - Advanced Notes.pdf</p>
+                            <div class="flex gap-4 mt-1">
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">12.4 MB</span>
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">Accessed: Oct 24,
+                                    2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity"
+                        data-icon="more_vert">more_vert</span>
+                </div>
+                <!-- List Item -->
+                <div
+                    class="flex items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface-container transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-outline" data-icon="description">description</span>
+                        <div>
+                            <p class="text-sm font-medium text-on-surface">Molecular Dynamics Volume IV.epub</p>
+                            <div class="flex gap-4 mt-1">
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">4.8 MB</span>
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">Accessed: Oct 22,
+                                    2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity"
+                        data-icon="more_vert">more_vert</span>
+                </div>
+            </div>
+        </section>
+        <!-- Past Papers Section -->
+        <section class="mb-10">
+            <div class="flex items-center gap-2 mb-4">
+                <h3 class="text-sm font-bold text-on-surface-variant tracking-wider uppercase px-2">Past Papers</h3>
+                <div class="h-[1px] flex-grow bg-outline-variant opacity-20"></div>
+            </div>
+            <div class="space-y-1">
+                <div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-outline" data-icon="article">article</span>
+                        <div>
+                            <p class="text-sm font-medium text-on-surface">Final_Exam_Review_2023_BioChem.pdf</p>
+                            <div class="flex gap-4 mt-1">
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">1.2 MB</span>
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">Accessed: Oct 20,
+                                    2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity"
+                        data-icon="more_vert">more_vert</span>
+                </div>
+                <div
+                    class="flex items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface-container transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-outline" data-icon="article">article</span>
+                        <div>
+                            <p class="text-sm font-medium text-on-surface">Midterm_Answers_Spring_22.docx</p>
+                            <div class="flex gap-4 mt-1">
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">850 KB</span>
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">Accessed: Oct 18,
+                                    2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity"
+                        data-icon="more_vert">more_vert</span>
+                </div>
+            </div>
+        </section>
+        <!-- Formula Sheets Section -->
+        <section class="mb-10">
+            <div class="flex items-center gap-2 mb-4">
+                <h3 class="text-sm font-bold text-on-surface-variant tracking-wider uppercase px-2">Formula Sheets</h3>
+                <div class="h-[1px] flex-grow bg-outline-variant opacity-20"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/10">
+                <div
+                    class="bg-surface flex items-center justify-between p-4 hover:bg-surface-container transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary" data-icon="functions">functions</span>
+                        <div>
+                            <p class="text-sm font-medium text-on-surface">Quantum_Mechanics_Cheatsheet.pdf</p>
+                            <div class="flex gap-4 mt-1">
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">2.1 MB</span>
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">Accessed: Oct 15,
+                                    2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-surface flex items-center justify-between p-4 hover:bg-surface-container transition-colors group">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary" data-icon="functions">functions</span>
+                        <div>
+                            <p class="text-sm font-medium text-on-surface">Calculus_III_Quick_Reference.pdf</p>
+                            <div class="flex gap-4 mt-1">
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">1.5 MB</span>
+                                <span class="text-[0.6875rem] font-medium text-on-surface-variant">Accessed: Sep 30,
+                                    2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Academic Image Decoy Card -->
+        <div class="mt-12 overflow-hidden rounded-lg bg-surface-container-high">
+            <div class="h-48 w-full bg-slate-200">
+                <img alt="Clean desk with open books, a laptop, and soft daylight filtering through a window"
+                    class="w-full h-full object-cover grayscale opacity-60"
+                    data-alt="Minimalist study desk with organized open textbooks, a sleek laptop, and soft natural window light reflecting on clean surfaces"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEAv25o8EaWO1bTXN7o3K1lo7R72OJCIOlBYmrC990gx8jL6gvk8VoXqdPTJoF0sDLYqxwxNBcwRCRhuWY07jcZKNK-KecgYnjQ7Fo-NUgiVEtW14PUe6SzLPX9f_JkWw2mO0iGvMMBj-wlvSaFXZTJEgZ6EeEVvLTTcza1bYvHsk5Hvn0VBZTCP54YxBNGiOwUUamazCP--JNohjE72vhBr0vQpIHSTyLqdEtB_1ldFgIWhW5gZZweia_y-1im9UXNu0feD4ARyoW" />
+            </div>
+            <div class="p-6">
+                <h4 class="text-sm font-bold text-on-surface mb-2">Institutional Announcement</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed">The digital library will undergo maintenance
+                    on Nov 5th. Offline synchronization of critical materials is highly recommended for all active
+                    semester participants.</p>
+            </div>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 w-full z-50 border-t-0 flex justify-around items-center w-full h-16 pb-safe bg-slate-50 dark:bg-black">
+        <button
+            class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 font-bold border-t-2 border-blue-700 dark:border-blue-400 pt-2 transition-all">
+            <span class="material-symbols-outlined" data-icon="book"
+                style="font-variation-settings: 'FILL' 1;">book</span>
+            <span class="font-['Inter'] text-[10px] uppercase tracking-[1.5pt] font-medium">Library</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-slate-500 dark:text-zinc-500 pt-2 hover:text-slate-900 dark:hover:text-white transition-all">
+            <span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+            <span class="font-['Inter'] text-[10px] uppercase tracking-[1.5pt] font-medium">Schedule</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-slate-500 dark:text-zinc-500 pt-2 hover:text-slate-900 dark:hover:text-white transition-all">
+            <span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+            <span class="font-['Inter'] text-[10px] uppercase tracking-[1.5pt] font-medium">Research</span>
+        </button>
+        <button
+            class="flex flex-col items-center justify-center text-slate-500 dark:text-zinc-500 pt-2 hover:text-slate-900 dark:hover:text-white transition-all">
+            <span class="material-symbols-outlined" data-icon="settings">settings</span>
+            <span class="font-['Inter'] text-[10px] uppercase tracking-[1.5pt] font-medium">Settings</span>
+        </button>
+    </nav>
+</body>
+
+</html>
